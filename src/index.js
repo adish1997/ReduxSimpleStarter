@@ -1,15 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
 
-import App from './components/app';
-import reducers from './reducers';
+// Create a new component. This component should produce some HTML
+const App = () => {
+	return <div>Hi!</div>;
+} // Here App is a class and we need to create its instance
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+// take this component generated html and put it
+//on the page (in then DOM)
 
-ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
-    <App />
-  </Provider>
-  , document.querySelector('.container'));
+ReactDOM.render(<App />, document.querySelector('.container')); // Now we are passing an instance
